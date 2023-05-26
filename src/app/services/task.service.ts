@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 import { Task } from '../models/task.model';
 
 @Injectable({
