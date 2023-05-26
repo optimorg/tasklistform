@@ -1,1 +1,22 @@
-<p>add-task works!</p>
+<div class="task-form">
+  <div *ngIf="!submitted">
+    <div class="task-form-group">
+      <label for="text">Enter task information here</label>
+      <input
+        type="text"
+        class="form-control"
+        id="task-text"
+        required
+        [(ngModel)]="task.text"
+        name="task-text"
+      />
+    </div>
+
+    <button (click)="saveTask()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted task successfully!</h4>
+    <button class="btn btn-success" (click)="newTask()">Add Task</button>
+  </div>
+</div>
