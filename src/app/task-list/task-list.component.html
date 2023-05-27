@@ -1,1 +1,27 @@
-<p>task-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Task List</h4>
+    <ul class="task-list-group">
+      <li
+        class="task-list-group-item"
+        *ngFor="let task of tasks; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTask(task, i)"
+      >
+        {{ task.text }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTask">
+      <app-task-details
+        (refreshList)="refreshList()"
+        [task]="currentTask"
+      ></app-task-details>
+    </div>
+    <div *ngIf="!currentTask">
+      <br />
+      <p>Please click on a Task...</p>
+    </div>
+  </div>
+</div>
